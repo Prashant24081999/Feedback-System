@@ -59,7 +59,7 @@ function displayFeedback(feedbackData) {
   feedbacksList.appendChild(li);
 
   deleteButton.addEventListener("click", () =>
-    deleteFeedback(feedbackData._id, li)
+    deleteFeedback(feedbackData, feedbackData._id, li)
   );
 
   editButton.addEventListener("click", () => {
@@ -67,7 +67,7 @@ function displayFeedback(feedbackData) {
   });
 }
 
-function deleteFeedback(id, li) {
+function deleteFeedback(feedBackData, id, li) {
   axios
     .delete(
       `https://crudcrud.com/api/2daecd07871c439ba3b31e7f5c27cb8b/feedbackData/${id}`
@@ -75,6 +75,8 @@ function deleteFeedback(id, li) {
     .then((response) => {
       console.log(response);
       feedbacksList.removeChild(li);
+      ratingsCounter[feedBackData.rating] -= 1;
+      updateRatingsList();
     })
     .catch((error) => {
       console.log(error);
@@ -92,6 +94,8 @@ function editFeedback(feedBackData, id, li) {
     .then((response) => {
       console.log(response);
       feedbacksList.removeChild(li);
+      ratingsCounter[feedBackData.rating] -= 1;
+      updateRatingsList();
     })
     .catch((error) => {
       console.log(error);
