@@ -94,7 +94,7 @@ function editFeedback(feedBackData, id, li) {
       feedbacksList.removeChild(li);
     })
     .catch((error) => {
-      console.log(errro);
+      console.log(error);
     });
 }
 
