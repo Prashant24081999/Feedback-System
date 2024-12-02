@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback System</title>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Feedback System</h2>
+    <h3>Overall Ratings</h3>
+    <ul id="ratingsList">
+        <li>* <span id="oneStar">0</span></li>
+        <li>** <span id="twoStar">0</span></li>
+        <li>*** <span id="threeStar">0</span></li>
+        <li>**** <span id="fourStar">0</span></li>
+        <li>***** <span id="fiveStar">0</span></li>
+    </ul>
+    <h2>Feedback Form</h2>
+    <form onSubmit=handleFormSubmit(event)>
+        <label for="name">Enter Your Name:</label>
+        <input type="text" name="name" id="name" required />
+        <label for="rating">Choose Rating: </label>
+        <select id="rating" name="rating" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <button type="submit" id="submit-btn">SUBMIT</button>
+    </form>
+    <h3>ALL FEEDBACKS</h3>
+    <ul id="feedbacksList">
+
+    </ul>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.8/axios.min.js"
+    integrity="sha512-v8+bPcpk4Sj7CKB11+gK/FnsbgQ15jTwZamnBf/xDmiQDcgOIYufBo6Acu1y30vrk8gg5su4x0CG3zfPaq5Fcg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="index.js"></script>
+
+</html>
